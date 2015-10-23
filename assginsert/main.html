@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Earthquakes data</title>
+  </head>
+  <body>
+    <h1>Earthquakes data from last 30 days </h1>
+		
+      <form action="/sign" method="post">
+		<br>
+        <div>
+		<b>Select the magnitude :</b>
+		<select name="mag_data1">
+			{% for data in earthquake_data1 %}
+				<option>{{data}}</option>
+			{% endfor %}
+		</select>
+		
+		<select name="mag_data2">
+            {% for d in earthquake_data2 %}
+				<option>{{d}}</option>
+			{% endfor %}
+		</select>
+     <br><br>
+		<b>Select the place :</b>
+		<select name ="place">
+			{% for p in place %}
+				<option>{{p}}</option>
+			{% endfor %}
+		</select>
+        <br><br>
+		<input type="submit" value="Get Results"></div>
+      </form>
+  </body>
+</html>
